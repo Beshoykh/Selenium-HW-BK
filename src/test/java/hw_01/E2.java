@@ -29,6 +29,5 @@ public class E2 {
         Thread.sleep(1000);
         WebElement clickLink = driver.findElement(By.partialLinkText("Link"));
         clickHere.click();
-        driver.quit();
     }
 }
