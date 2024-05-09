@@ -11,7 +11,5 @@ public class ConfigReader {
       Properties properties = new Properties();
       properties.load(file);
       return properties.getProperty(key);
-
   }
-
 }

@@ -14,7 +14,7 @@ import java.util.List;
 public class Common_Methods_SelectDropDown {
     public static WebDriver driver;
     public static void dropDownMethod() throws IOException, InterruptedException {
-        switch (ConfigReader.read("browser")){
+        switch (ConfigReader.read("browser2")){
             case "Chrome" :
                driver= new ChromeDriver();
                break;
@@ -29,13 +29,20 @@ public class Common_Methods_SelectDropDown {
         }
         driver.manage().window().maximize();
         driver.get(ConfigReader.read("url2"));
-        WebElement multiSelectLists =driver.findElement(By.xpath("//select[@id='select-demo']"));
-        Select select = new Select(multiSelectLists);
+        WebElement listDemo =driver.findElement(By.xpath("//select[@id='select-demo']"));
+        Select select = new Select(listDemo);
         select.selectByValue("Tuesday");
         Thread.sleep(1000);
-        select.selectByIndex(1);
+        select.selectByValue("Wednesday");
         Thread.sleep(1000);
-        select.selectByIndex(6);
+        select.selectByVisibleText("Friday");
+        Thread.sleep(1000);
+        WebElement multiSelect = driver.findElement(By.xpath("//select[@id='multi-select']"));
+        Select select2 = new Select(multiSelect);
+        select2.selectByValue("New Jersey");
+        select2.selectByValue("New York");
+        select2.selectByValue("Texas");
+        select2.selectByValue("Washington");
         driver.quit();
 
     }

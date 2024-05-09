@@ -26,6 +26,5 @@ public class Common_Methods {
         driver.manage().window().maximize();
         driver.get(ConfigReader.read("url"));
         driver.quit();
-
     }
 }
