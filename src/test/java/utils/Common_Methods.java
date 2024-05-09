@@ -27,8 +27,5 @@ public class Common_Methods {
         driver.get(ConfigReader.read("url"));
         driver.quit();
 
-
-
-
     }
 }

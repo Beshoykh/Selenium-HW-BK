@@ -14,7 +14,7 @@ import java.util.List;
 public class Common_Methods_SelectDropDown {
     public static WebDriver driver;
     public static void dropDownMethod() throws IOException, InterruptedException {
-        switch (DropDownReader.dropDownRead("browser")){
+        switch (ConfigReader.read("browser")){
             case "Chrome" :
                driver= new ChromeDriver();
                break;
@@ -26,10 +26,9 @@ public class Common_Methods_SelectDropDown {
                 break;
             default:
                 throw new RuntimeException("Invalid Browser");
-
         }
         driver.manage().window().maximize();
-        driver.get(DropDownReader.dropDownRead("url"));
+        driver.get(ConfigReader.read("url2"));
         WebElement multiSelectLists =driver.findElement(By.xpath("//select[@id='select-demo']"));
         Select select = new Select(multiSelectLists);
         select.selectByValue("Tuesday");
