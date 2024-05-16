@@ -23,23 +23,23 @@ public class calendar {
         driver.findElement(By.xpath("//input[@id='btnLogin']")).click();
         driver.findElement(By.xpath("//b[text()='Leave']")).click();
         driver.findElement(By.xpath("//input[@id='calFromDate']")).click();
-        Select select = new Select(driver.findElement(By.xpath("//select[@class='ui-datepicker-month']")));
-        select.selectByValue("9");
-        Select select1 = new Select(driver.findElement(By.xpath("//select[@class='ui-datepicker-year']")));
-        select1.selectByValue("1987");
-        List<WebElement> days = driver.findElements(By.xpath("//a[@class='ui-state-default']"));
-        for (WebElement day :days){
-            if (day.getText().equals("24")){
-                day.click();
+        Select selectMonthFrom = new Select(driver.findElement(By.xpath("//select[@class='ui-datepicker-month']")));
+        selectMonthFrom.selectByValue("9");
+        Select selectYearFrom = new Select(driver.findElement(By.xpath("//select[@class='ui-datepicker-year']")));
+        selectYearFrom.selectByValue("1987");
+        List<WebElement> daysFrom = driver.findElements(By.xpath("//a[@class='ui-state-default']"));
+        for (WebElement dayFrom :daysFrom){
+            if (dayFrom.getText().equals("24")){
+                dayFrom.click();
                 break;
             }
         }
 
         driver.findElement(By.xpath("//input[@id='calToDate']")).click();
-        Select select3 = new Select(driver.findElement(By.xpath("//select[@class='ui-datepicker-month']")));
-        select3.selectByValue("5");
-        Select select4 = new Select(driver.findElement(By.xpath("//select[@class='ui-datepicker-year']")));
-        select4.selectByValue("1990");
+        Select selectMonthTo = new Select(driver.findElement(By.xpath("//select[@class='ui-datepicker-month']")));
+        selectMonthTo.selectByValue("5");
+        Select selectYearTo = new Select(driver.findElement(By.xpath("//select[@class='ui-datepicker-year']")));
+        selectYearTo.selectByValue("1990");
         List<WebElement> daysTo = driver.findElements(By.xpath("//a[@class='ui-state-default']"));
         for (WebElement dayTo :daysTo){
             if (dayTo.getText().equals("12")){
